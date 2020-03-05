@@ -1,0 +1,17 @@
+data rand;
+call streaminit(12345);
+do i = 1 to 30;
+	x = rand("Uniform");
+	output;
+end;
+run;
+
+goptions ftext=arial;
+proc gchart data=rand;
+vbar x;
+title "Random Values from N(0,1)";
+RUN;
+
+proc freq data= rand;
+run;
+
