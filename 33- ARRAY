@@ -1,0 +1,24 @@
+data sixvar;
+INFILE "C:\Users\caiom\Documents\WPS Workspaces\Workspace1\coursedev\6var (2).txt";
+input var_1 var_2 var_3 var_4 var_5 var_6;
+RUN;
+
+/*LONG WAY STATEMENT -> IF THEN
+DATA recode;
+SET sixvar;
+if var_2 < 5 then var_2 = .;
+RUN;*/
+
+/* EASIER WAY USING an ARRAY inside a DO AND LOOP */
+
+DATA recodearray;
+set sixvar;
+array recodearr(6) var_1-var_6;
+do i = 1 to 6;
+if recodearr(i) < 40 then recodearr(i)=.;
+end;
+RUN;
+
+PROC PRINT data=recodearray;
+var var_1-var_6;
+RUN;
