@@ -1,0 +1,10 @@
+/* 31- formatted inputs (non standard data, dates)*/
+
+data policel;
+infile "C:\Users\caiom\Documents\WPS Workspaces\Workspace1\coursedev\londonoutcomes.csv" DSD MISSOVER FIRSTOBS=2;
+LENGTH CrimeID $25 ReportedF $25 FallsW $25 Longitude 4 Latitude 4 Location $25 LSOAC $25 LSOAN $25 OutcomeT $25;
+input CrimeID$ ReportedF$ FallsW$ Longitude Latitude Location$ LSOAC$ LSOAN$ OutcomeT$;
+RUN;
+
+/*
+INPUT Birthdate MMDDYY10.;
