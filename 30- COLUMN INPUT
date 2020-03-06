@@ -1,0 +1,11 @@
+/* 30- COLUMN INPUT */
+/*se usar column input, SAS consegue ler os dados mesmo sem o espaco depois do greg*/
+
+DATA sales1;
+input Name$1-4 Sales_1-Sales_4;
+CARDS; 
+Greg10 2 40 0 
+John 15 5 10 100
+Lisa 50 10 15 50 
+Mark 20 0 5 20
+RUN;
