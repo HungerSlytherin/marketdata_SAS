@@ -1,0 +1,14 @@
+data trimlecture;/*a funcao trim tira espacos vazios*/
+	input firstname$ lastname$ age tscore;
+	length name$20;
+	name=trim(lastname)||', '||firstname; /*Esta falando pra criar uma nova variavel name, com sobrenome virgula nome*/
+	datalines;
+Alex Benson 27 45
+;
+RUN;
+
+PROC CONTENTS DATA=trimlecture;
+RUN;
+
+PROC PRINT DATA=trimlecture;
+RUN;
